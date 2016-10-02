@@ -14,6 +14,17 @@ marmot = 'http://www.factroom.ru/facts/wp-content/uploads/2011/02/surok.jpg'
 cat = 'http://fit4brain.com/wp-content/uploads/2014/05/cat.jpg'
 
 
+@bot.message_handler(commands=['help'])
+def send_help(message):
+    msg = bot.send_message(message.chat.id, "Список доступных команд: "
+                                            "/start, /help, /surikat, /photo ")
+
+
+@bot.message_handler(commands=['surikat', 'сурикатик', 'капибашка'])
+def send_suri(message):
+    msg = bot.send_message(message.chat.id, 'Привет, Паша! Не грусти!')
+
+
 @bot.message_handler(commands=['photo'])
 def send_photo(message):
     msg = bot.send_photo(message.chat.id, url, "photo")
@@ -48,17 +59,6 @@ def process_step(message):
 #@bot.message_handler(func=lambda message: True)
 #def echo_message(message):
 #    bot.reply_to(message, message.text)
-
-
-@bot.message_handler(commands=['help'])
-def send_help(message):
-    msg = bot.send_message(message.chat.id, 'Список доступных команд: '
-                                            '/start, /help, /surikat, /photo ')
-
-
-@bot.message_handler(commands=['surikat', 'сурикатик', 'капибашка'])
-def send_hello(message):
-    msg = bot.send_message(message.chat.id, 'Привет, Паша! Не грусти!')
 
 
 if __name__ == '__main__':
