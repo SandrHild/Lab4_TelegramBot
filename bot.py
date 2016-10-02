@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # задание: настройте изображение профиля вашего бота
 
-import Lab4_TelegramBot.config as config
+import config
 import telebot
 from telebot import types
 import urllib
